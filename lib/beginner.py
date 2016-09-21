@@ -3,8 +3,8 @@
 import low_level as ll
 
 class Beginner_Functions(ll.Low_Level):
-    # This will be the magic that makes this class only return what we want
-    def __dir__(self):
+    # list of strings representing what function names we'll be exporting
+    def exported_methods(self):
         return []
 
     # Utility functions

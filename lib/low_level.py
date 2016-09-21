@@ -2,7 +2,9 @@
 
 class Low_Level():
 
-    def __dir__(self):
+    def test()
+
+    def exported_methods(self):
          return []
 
     def step_right_leg(self):
