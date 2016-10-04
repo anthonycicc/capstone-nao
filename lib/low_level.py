@@ -1,11 +1,18 @@
 # Stubs for "lower level" functionality
 
+import naoqi
+
 class Low_Level():
 
-    def test()
+    __ip_address = "none"
+    __port = 9559
 
     def exported_methods(self):
          return []
+
+    def connect_to_robot(self, IPAddress, port=9559):
+        self.__ip_address = IPAddress
+        self.__port = port
 
     def step_right_leg(self):
         """ Instructs the robot to step with its right leg
@@ -35,7 +42,11 @@ class Low_Level():
         :param text: The text to speack aloud
         :return: 0 if action completed successfully, something else on failure
         """
-        pass
+        if (self.__ip_address != "none"):
+            tts = naoqi.ALProxy("ALTextToSpeech", self.__ip_address, self.__port)
+            tts.say(text)
+        else:
+            raise RuntimeError("Make sure to connect to the robot first!")
 
     def move_shoulder(self, pitch, roll):
         """ Moves the shoulder of the robot to the given pitch and roll
