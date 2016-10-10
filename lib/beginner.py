@@ -136,8 +136,8 @@ class Beginner_Functions(ll.Low_Level):
         :param position: The number of the position
         :return: 0 if action completed successfully, something else on failure
         """
-
-            self.__motionProxy.moveInit()
+        #TODO: Dave 
+        self.__motionProxy.moveInit()
 
     @connection_intact
     def raise_left_arm(self, position):
@@ -146,6 +146,7 @@ class Beginner_Functions(ll.Low_Level):
         :param position: The number of the position
         :return: 0 if action completed successfully, something else on failure
         """
+        #TODO: Dave 
         pass
     
     @connection_intact
@@ -155,6 +156,7 @@ class Beginner_Functions(ll.Low_Level):
         :param leg: The leg (left or right) to kick with
         :return: 0 if action completed successfully, something else on failure
         """
+        #TODO: Dave 
         pass
     
     @connection_intact
@@ -164,6 +166,7 @@ class Beginner_Functions(ll.Low_Level):
         :param arm: The arm (left or right) to extend
         :return: 0 if action completed successfully, something else on failure
         """
+        #TODO: Dave 
         pass
     
     @connection_intact
