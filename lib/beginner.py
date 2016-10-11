@@ -8,7 +8,7 @@ from functools import wraps
 def connection_intact(f):
     @wraps(f)
     def wrapped(self, *args, **kwargs):
-        if self.__connected:
+        if self.connected:
             return f(self, *args, **kwargs)
         else:
             raise RuntimeError("Make sure to connect to the robot first!")         
@@ -18,7 +18,7 @@ class Beginner_Functions(ll.Low_Level):
 
     __ip_address = None
     __port = 9559
-    __connected = False
+    connected = False
 
     # Proxy listing
     __speechProxy = None
@@ -32,6 +32,9 @@ class Beginner_Functions(ll.Low_Level):
 
     # Utility functions
 
+    def __init__(self, ipaddress, port=9559):
+        self.connect_to_robot(ipaddress,port)
+
     def connect_to_robot(self, IPAddress, port=9559):
         """ Connects to the robot over TCP/IP (wifi or ethernet connection), as well as passes
 
@@ -44,13 +47,12 @@ class Beginner_Functions(ll.Low_Level):
 
         # Proxy setup
         try:
-            self.__speechProxy = naoqi.ALProxy("ALTextToSpeect", self.__ip_address, self.__port)
+            self.__speechProxy = naoqi.ALProxy("ALTextToSpeech", self.__ip_address, self.__port)
             self.__motionProxy = naoqi.ALProxy("ALMotion", self.__ip_address, self.__port)
             self.__postureProxy = naoqi.ALProxy("ALRobotPosture", self.__ip_address, self.__port)
-            self.__photoCaptureProxy = naoqi.ALProxy("ALPhotoCapture", self.__ip_address, self.__port)
-            self.
+            # self.__photoCaptureProxy = naoqi.ALProxy("ALPhotoCapture", self.__ip_address, self.__port)
             self.__motionProxy.wakeUp()
-            self.__connected = True
+            self.connected = True
         except:
             raise("Something failed. Please check the IP Address and port of the robot, and try again")
 
@@ -90,11 +92,11 @@ class Beginner_Functions(ll.Low_Level):
         :param time: the length of time (in seconds) for NAO to move backward
         :return: 0 if action completed successfully, something else on failure
         """
-            self.__motionProxy.moveInit()
+        self.__motionProxy.moveInit()
 
-            self.__motionProxy.moveToward(-1, 0,0)
-            time.sleep(time)
-            self.__motionProxy.stopMove()
+        self.__motionProxy.moveToward(-1, 0,0)
+        time.sleep(time)
+        self.__motionProxy.stopMove()
 
     @connection_intact
     def say(self, inputString):
