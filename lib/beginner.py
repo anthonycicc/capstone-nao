@@ -135,11 +135,14 @@ class Beginner_Functions(ll.Low_Level):
     def raise_right_arm(self, position):
         """ Raises the right arm of the robot to a given position.
 
-        :param position: The number of the position
+        :param position: The number of the position (1 to 4)
         :return: 0 if action completed successfully, something else on failure
         """
-        #TODO: Dave 
+        #TODO: Dave
+        angle = ((position-3)*0.25)*math.pi)
         self.__motionProxy.moveInit()
+
+        self.__motionProxy.setAngles("RShoulderPitch", angle, 0.1)
 
     @connection_intact
     def raise_left_arm(self, position):
@@ -148,27 +151,48 @@ class Beginner_Functions(ll.Low_Level):
         :param position: The number of the position
         :return: 0 if action completed successfully, something else on failure
         """
-        #TODO: Dave 
+        #TODO: Dave
+        angle = ((position-3)*0.25)*math.pi)
+        self.__motionProxy.moveInit()
+
+        self.__motionProxy.setAngles("LShoulderPitch", angle, 0.1)
+
         pass
     
     @connection_intact
     def kick(self, leg):
         """ Instructs the robot to kick with either leg
 
-        :param leg: The leg (left or right) to kick with
+        :param leg: The leg ('L' for left, 'R' for right) to kick with
         :return: 0 if action completed successfully, something else on failure
         """
-        #TODO: Dave 
+        #TODO: Dave
+        hipPitch = leg + "HipPitch"
+        kneePitch = leg + "KneePitch"
+        
+        self.__motionProxy.setAngles(hipPitch, -0.5*math.pi, 0.5)
+        self.__motionProxy.setAngles(kneePitch, 0.5*math.pi, 0.5)
+        time.__sleep(0.25)
+        self.__motionProxy.setAngles(kneePitch, 0, 1)
+        time.sleep(0.3)
+        self.__motionProxy.setAngles(kneePitch, 0.5*math.pi, 1)
+        time.sleep(0.25)
+        self.__motionProxy.setAngles(hipPitch, 0, 0.5)
+        self.__motionProxy.setAngles(kneePitch, 0, 0.5)
         pass
     
     @connection_intact
     def extend_arm(self, arm):
         """ Extends the arm of the robot to be perpendicular to the robot
 
-        :param arm: The arm (left or right) to extend
+        :param arm: The arm ('L' for left, 'R' for right) to extend
         :return: 0 if action completed successfully, something else on failure
         """
-        #TODO: Dave 
+        self.__motionProxy.moveInit()
+        
+        self.__motionProxy.setAngles(arm.join("ShoulderPitch"), 0, 0.1)
+        self.__motionProxy.setAngles(arm.join("ShoulderRoll"), 0, 0.1)
+        self.__motionProxy.setAngles(arm.join("ElbowRoll"), 0, 0.1)
         pass
     
     @connection_intact
