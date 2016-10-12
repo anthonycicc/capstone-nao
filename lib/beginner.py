@@ -3,6 +3,7 @@
 import low_level as ll
 import naoqi
 import math
+import time
 from functools import wraps
 
 def connection_intact(f):
@@ -73,29 +74,29 @@ class Beginner_Functions(ll.Low_Level):
 
     # General use functions
     @connection_intact
-    def move_forward(self, time):
+    def move_forward(self, seconds):
         """ Moves the robot forward for a certain amount of time (in seconds)
 
-        :param time: the length of time (in seconds) for NAO to move forward
+        :param seconds: the length of time (in seconds) for NAO to move forward
         :return: 0 if action completed successfully, something else on failure
         """
         self.__motionProxy.moveInit()
 
-        self.__motionProxy.moveToward(1, 0,0)
-        time.sleep(time)
+        self.__motionProxy.moveToward(1, 0, 0)
+        time.sleep(seconds)
         self.__motionProxy.stopMove()
 
     @connection_intact
-    def move_backward(self, time):
+    def move_backward(self, seconds):
         """ Moves the robot backward for a certain amount of time (in seconds)
 
-        :param time: the length of time (in seconds) for NAO to move backward
+        :param seconds: the length of time (in seconds) for NAO to move backward
         :return: 0 if action completed successfully, something else on failure
         """
         self.__motionProxy.moveInit()
 
         self.__motionProxy.moveToward(-1, 0,0)
-        time.sleep(time)
+        time.sleep(seconds)
         self.__motionProxy.stopMove()
 
     @connection_intact
@@ -110,26 +111,30 @@ class Beginner_Functions(ll.Low_Level):
         self.__speechProxy.say(inputString)
 
     @connection_intact
-    def turn_right(self, angle):
+    def move_right(self, seconds):
         """ Turns the robot a given angle to the right.
 
-        :param angle: The angle the robot should end up facing
+        :param seconds: the length of time (in seconds) for NAO to move to the right
         :return: 0 if action completed successfully, something else on failure
         """
         self.__motionProxy.moveInit()
 
-        self.__motionProxy.moveTo(0, 0, ((-1)*(angle/180)*math.pi))
+        self.__motionProxy.moveToward(0, -1,0)
+        time.sleep(seconds)
+        self.__motionProxy.stopMove()
  
     @connection_intact
-    def turn_left(self, angle):
+    def move_left(self, seconds):
         """ Turns the robot a given angle to the left.
 
-        :param angle: The angle the robot should end up facing
+        :param seconds: the length of time (in seconds) for NAO to move to the left
         :return: 0 if action completed successfully, something else on failure
         """
         self.__motionProxy.moveInit()
 
-        self.__motionProxy.moveTo(0, 0, ((angle/180)*math.pi))
+        self.__motionProxy.moveToward(0, 1,0)
+        time.sleep(seconds)
+        self.__motionProxy.stopMove()
 
     @connection_intact
     def raise_right_arm(self, position):
@@ -138,11 +143,11 @@ class Beginner_Functions(ll.Low_Level):
         :param position: The number of the position (1 to 4)
         :return: 0 if action completed successfully, something else on failure
         """
-        #TODO: Dave
-        angle = ((position-3)*0.25)*math.pi)
+        angle = ((position-3)*0.25)*math.pi
         self.__motionProxy.moveInit()
 
         self.__motionProxy.setAngles("RShoulderPitch", angle, 0.1)
+        time.sleep(4)
 
     @connection_intact
     def raise_left_arm(self, position):
@@ -151,14 +156,12 @@ class Beginner_Functions(ll.Low_Level):
         :param position: The number of the position
         :return: 0 if action completed successfully, something else on failure
         """
-        #TODO: Dave
-        angle = ((position-3)*0.25)*math.pi)
+        angle = ((position-3)*0.25)*math.pi
         self.__motionProxy.moveInit()
 
         self.__motionProxy.setAngles("LShoulderPitch", angle, 0.1)
+        time.sleep(4)
 
-        pass
-    
     @connection_intact
     def kick(self, leg):
         """ Instructs the robot to kick with either leg
@@ -166,21 +169,20 @@ class Beginner_Functions(ll.Low_Level):
         :param leg: The leg ('L' for left, 'R' for right) to kick with
         :return: 0 if action completed successfully, something else on failure
         """
-        #TODO: Dave
+        #TODO: Dave - This doesn't work (yet) - 10/12
         hipPitch = leg + "HipPitch"
         kneePitch = leg + "KneePitch"
         
         self.__motionProxy.setAngles(hipPitch, -0.5*math.pi, 0.5)
         self.__motionProxy.setAngles(kneePitch, 0.5*math.pi, 0.5)
-        time.__sleep(0.25)
+        time.sleep(0.25)
         self.__motionProxy.setAngles(kneePitch, 0, 1)
         time.sleep(0.3)
         self.__motionProxy.setAngles(kneePitch, 0.5*math.pi, 1)
         time.sleep(0.25)
         self.__motionProxy.setAngles(hipPitch, 0, 0.5)
         self.__motionProxy.setAngles(kneePitch, 0, 0.5)
-        pass
-    
+
     @connection_intact
     def extend_arm(self, arm):
         """ Extends the arm of the robot to be perpendicular to the robot
@@ -190,11 +192,10 @@ class Beginner_Functions(ll.Low_Level):
         """
         self.__motionProxy.moveInit()
         
-        self.__motionProxy.setAngles(arm.join("ShoulderPitch"), 0, 0.1)
-        self.__motionProxy.setAngles(arm.join("ShoulderRoll"), 0, 0.1)
-        self.__motionProxy.setAngles(arm.join("ElbowRoll"), 0, 0.1)
-        pass
-    
+        self.__motionProxy.setAngles(arm + "ShoulderPitch", 0, 0.1)
+        self.__motionProxy.setAngles(arm + "ShoulderRoll", 0, 0.1)
+        self.__motionProxy.setAngles(arm + "ElbowRoll", 0, 0.1)
+
     @connection_intact
     def take_picture(self, fileName):
         """ Takes a picture with the camera mounted on the robot's head
