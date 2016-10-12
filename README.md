@@ -11,4 +11,9 @@ If you want to test, you will also need Choreagraphe.
 
 Download and complete the installation instructions located [here](http://doc.aldebaran.com/2-1/dev/python/install_guide.html)
 
+
+## Choreagraphe
+Go [here](https://developer.softbankrobotics.com/us-en/downloads/nao-v5-v4) after you've signed in to access a Choreagraphe key
+## Testing
 We don't really have the actual infrastructure set up for things to move yet.
+TODO ^^^^^^
