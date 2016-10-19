@@ -4,6 +4,7 @@ import low_level as ll
 import naoqi
 import math
 import time
+from ui_rep import UI_Func, Func_Arg, ui_from_func
 from functools import wraps
 
 def connection_intact(f):
@@ -27,9 +28,48 @@ class Beginner_Functions(ll.Low_Level):
     __postureProxy = None
     __photoCaptureProxy = None
 
-    # list of strings representing what function names we'll be exporting
+    # Returns a list of UI_Func
     def exported_methods(self):
-        return []
+        x = [
+            (self.reset_to_neutral, []),
+            (self.move_forward, [Func_Arg('seconds',
+                                     'length of time for NAO to move forward',
+                                     'Natural')]), # Consider replacing these with func calls
+            (self.move_backward, [Func_Arg('seconds',
+                                     'length of time for NAO to move backward',
+                                      'Natural')]),
+            (self.say, [Func_Arg('inputString',
+                            'Words for NAO to say',
+                            'string')]),
+            (self.move_right, [Func_Arg('seconds',
+                                     'length of time for NAO to turn right',
+                                      'Natural')]),
+            (self.move_left, [Func_Arg('seconds',
+                                     'length of time for NAO to turn left',
+                                      'Natural')]),
+            (self.raise_right_arm, [Func_Arg('position',
+                                        'Number of the position',
+                                        [1,2,3,4])]),
+            (self.raise_left_arm, [Func_Arg('position',
+                                            'Number of the position',
+                                            [1,2,3,4])]),
+            (self.kick, [Func_Arg('side',
+                             'which leg to kick',
+                             ['Left', 'Right'])]),
+            (self.extend_arm, [Func_Arg('side',
+                                   'which arm to extend',
+                                   ['Left, Right'])]),
+            (self.take_picture, [Func_Arg('fileName',
+                                     'what to name to save the picture as',
+                                     'string')]),
+            (self.play_audio, [Func_Arg('filePath',
+                                   'location of the audio file to play',
+                                   'string')]),
+            (self.sit, []),
+            (self.stand, []),
+            (self.lay_down, []),
+        ]
+        return [ui_from_func(func, args) for (func, args) in x]
 
     # Utility functions
 
