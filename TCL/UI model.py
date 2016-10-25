@@ -1,12 +1,34 @@
 # Imports and preprocessor
+
 from tkinter import *
 from tkinter import ttk
+from tkinter import scrolledtext
+
 root = Tk()
 root.title("Nao Programming IDE")
 
 # Function definitions. Currently This is only a placehoder (this is what the top menu bar is currently calling)
 def hello():
     print("hello!")
+
+# Called when the selection in the listbox changes
+def showDescriptions(*args):
+    idxs = function_list.curselection()
+    if len(idxs) == 1:
+        idx = int(idxs[0])
+        code = functionCodes[idx]
+        name = functionNames[idx]
+        popn = descriptions[code]
+        functionDescription.set("The funciton %s will %s" % (name, popn))
+
+def addFunction(*args):
+    idxs = function_list.curselection()
+    if len(idxs) == 1:
+        idx = int(idxs[0])
+        code = functionCodes[idx]
+        name = functionNames[idx]
+    text.insert(INSERT, '\n%s' % (name))
+
 
 # Top level menu
 # create the file menu
@@ -48,18 +70,6 @@ descriptions = {'wf':'move the robot forwards', 'wb':'move the robot backwards',
 functionDescription = StringVar()
 search = StringVar()
 
-# Called when the selection in the listbox changes
-def showDescriptions(*args):
-    idxs = function_list.curselection()
-    if len(idxs)==1:
-        idx = int(idxs[0])
-        code = functionCodes[idx]
-        name = functionNames[idx]
-        popn = descriptions[code]
-        functionDescription.set("The funciton %s will %s" % (name, popn))
-
-
-
 # Create and grid the outer content frame
 c = ttk.Frame(root, padding=(3, 3, 12, 12))
 c.grid(column=0, row=0, sticky=(N,W,E,S))
@@ -70,10 +80,16 @@ c.grid_rowconfigure(0,weight=1)
 function_list = Listbox(c, listvariable=fnames, height=5)
 function_scrollbar = ttk.Scrollbar(c, orient=VERTICAL, command=function_list.yview)
 function_list.configure(yscrollcommand=function_scrollbar.set)
-function_desc = ttk.Label(c, textvariable=statusmsg, anchor=W, width=50)
-frame = ttk.Frame(c, borderwidth=1, height=800, width=800, relief=SUNKEN)
+function_desc = ttk.Label(c, textvariable=functionDescription, anchor=W, width=50)
+
+design_space = ttk.Frame(c, borderwidth=1, height=800, width=600, relief=SUNKEN)
+text = Text(design_space, height=40, width=100)
+text.pack(side="left", fill="both", expand=True)
+
 search_entry = ttk.Entry(c, width=20, textvariable=search,)
 search_button = ttk.Button(c, text="Search", command=showDescriptions(),)
+#textPad = ttk.scrolledtext(frame, width=800, height=800)
+#textPad.pack()
 
 
 # Grid all the widgets
@@ -87,12 +103,13 @@ function_desc.grid(column=1, row=4, sticky=(W,E))
 function_scrollbar.grid(column=2, row=3, sticky=(N,S))
 
 #Col 3
-frame.grid(column=3, row=3, sticky=(N,S,E,W))
+design_space.grid(column=3, row=3, sticky=(N,S,E,W))
 
 
 
 # Set event bindings for when the selection in the listbox changes,
 function_list.bind('<<ListboxSelect>>', showDescriptions)
+function_list.bind('<Double-1>', addFunction)
 
 # Color alternating lines of the listbox
 for i in range(0,len(functionNames),2):
