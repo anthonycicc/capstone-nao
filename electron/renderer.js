@@ -31,7 +31,7 @@ function saveFile(){
 function loadFile() {
   const filePaths = dialog.showOpenDialog({properties: ['openFile']});
   const xml_text = fs.readFileSync(filePaths[0]);
-
+  workspace.clear();
   const xml = Blockly.Xml.textToDom(xml_text);
   Blockly.Xml.domToWorkspace(xml, workspace);
 }
