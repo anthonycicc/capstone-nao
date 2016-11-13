@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>Hello World!</title>
+  <script src="node_modules/blockly/blockly_compressed.js"></script>
+  <script src="node_modules/blockly/python_compressed.js"></script>
+  <script src="node_modules/blockly/blocks_compressed.js"></script>
+  <script src="node_modules/blockly/msg/js/en.js"></script>
+</head>
+
+<body>
+  <xml id="toolbox" style="display: none">
+    <block type="controls_if"></block>
+    <block type="controls_repeat_ext"></block>
+    <block type="logic_compare"></block>
+    <block type="math_number"></block>
+    <block type="math_arithmetic"></block>
+    <block type="text"></block>
+    <block type="text_print"></block>
+  </xml>
+  <div id="blocklyDiv" style="height: 480px; width: 600px;"></div>
+  <button id="save-button" type="button">Save File</button>
+  <button id="load-button" type="button">Load File</button>
+  <button id="run-button" type="button">Execute Your Code</button>
+</body>
+<script>
+  // You can also require other files to run in this process
+  require('./renderer.js')
+</script>
+
+</html>
