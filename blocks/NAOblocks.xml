@@ -1,0 +1,592 @@
+<xml xmlns="http://www.w3.org/1999/xhtml"><block type="factory_base" id="-W^ik522(83Aqq8l]WyP" deletable="false" movable="false" x="0" y="0">
+    <mutation connections="BOTTOM"></mutation>
+    <field name="NAME">connect_to_Robot</field>
+    <field name="INLINE">AUTO</field>
+    <field name="CONNECTIONS">BOTTOM</field>
+    <statement name="INPUTS">
+      <block type="input_dummy" id="J_ODI2u5@hkowb{u:C|W">
+        <field name="ALIGN">LEFT</field>
+        <statement name="FIELDS">
+          <block type="field_static" id="v=Y)kaO/]7lW(y02QZ^1">
+            <field name="TEXT">Enter NAO's IP Address</field>
+            <next>
+              <block type="field_input" id="s~f|WCJBB;[z;50ux53c">
+                <field name="TEXT">0.0.0.0</field>
+                <field name="FIELDNAME">Robot IP Adress</field>
+              </block>
+            </next>
+          </block>
+        </statement>
+      </block>
+    </statement>
+    <value name="BOTTOMTYPE">
+      <shadow type="type_null" id="rc}vwZ_9rE/}sVM8}R4M"></shadow>
+    </value>
+    <value name="COLOUR">
+      <block type="colour_hue" id="kmA5RX1Hdbz-{M)U7~?!">
+        <mutation colour="#a5745b"></mutation>
+        <field name="HUE">20</field>
+      </block>
+    </value>
+  </block><block type="factory_base" id="]d07f=(WL.PdeBP_}p5~" deletable="false" movable="false" x="0" y="0">
+    <mutation connections="TOP"></mutation>
+    <field name="NAME">disconnect_from_robot</field>
+    <field name="INLINE">AUTO</field>
+    <field name="CONNECTIONS">TOP</field>
+    <statement name="INPUTS">
+      <block type="input_dummy" id="6QQ6LQ^F?qu^_oNhski;">
+        <field name="ALIGN">LEFT</field>
+        <statement name="FIELDS">
+          <block type="field_static" id="+3@:A|0uleh5ECI`,.[z">
+            <field name="TEXT">Disconnect from NAO</field>
+          </block>
+        </statement>
+      </block>
+    </statement>
+    <value name="TOPTYPE">
+      <shadow type="type_null" id="K3}(o):}:k]{sp^iLgsC"></shadow>
+    </value>
+    <value name="COLOUR">
+      <block type="colour_hue" id="RU%k^S;kB,o_|-A;Dl!^">
+        <mutation colour="#a5745b"></mutation>
+        <field name="HUE">20</field>
+      </block>
+    </value>
+  </block><block type="factory_base" id="+~3FQ0J6Vqs*AqN`|ef[" deletable="false" movable="false" x="0" y="0">
+    <mutation connections="BOTH"></mutation>
+    <field name="NAME">reset_to_neutral</field>
+    <field name="INLINE">AUTO</field>
+    <field name="CONNECTIONS">BOTH</field>
+    <statement name="INPUTS">
+      <block type="input_dummy" id="c_u|S0Im{6%R_3o]?*EC">
+        <field name="ALIGN">LEFT</field>
+        <statement name="FIELDS">
+          <block type="field_static" id="Z@Xr;+#695HI`2RA%:2N">
+            <field name="TEXT">Reset NAO to a standing position</field>
+          </block>
+        </statement>
+      </block>
+    </statement>
+    <value name="TOPTYPE">
+      <shadow type="type_null" id="+0[ADd_:YI7VznS4yLIk"></shadow>
+    </value>
+    <value name="BOTTOMTYPE">
+      <shadow type="type_null" id="PE@8w*QYO|}z)hOh%AdI"></shadow>
+    </value>
+    <value name="COLOUR">
+      <block type="colour_hue" id="0AVWHazax,B?3Zb8q.z4">
+        <mutation colour="#5ba55b"></mutation>
+        <field name="HUE">120</field>
+      </block>
+    </value>
+  </block><block type="factory_base" id="Fxl2f(Vcs%}F?i*y(?J=" deletable="false" movable="false" x="0" y="0">
+    <mutation connections="BOTH"></mutation>
+    <field name="NAME">move_forward</field>
+    <field name="INLINE">AUTO</field>
+    <field name="CONNECTIONS">BOTH</field>
+    <statement name="INPUTS">
+      <block type="input_dummy" id="^|8YCN(6O//bC`P.[9k$">
+        <field name="ALIGN">LEFT</field>
+        <statement name="FIELDS">
+          <block type="field_static" id="LuC+QU4|KiFg[^W_c$I)">
+            <field name="TEXT">Move forward for</field>
+            <next>
+              <block type="field_number" id="tR?uHb*Z#54vbj6$q8Uv">
+                <field name="VALUE">0</field>
+                <field name="FIELDNAME">time</field>
+                <field name="MIN">0</field>
+                <field name="MAX">50</field>
+                <field name="PRECISION">0</field>
+                <next>
+                  <block type="field_static" id="/L]pk]*F(Tuz~YWT*$PM">
+                    <field name="TEXT">seconds</field>
+                  </block>
+                </next>
+              </block>
+            </next>
+          </block>
+        </statement>
+      </block>
+    </statement>
+    <value name="TOPTYPE">
+      <shadow type="type_null" id="ITfo+{uKzn`+H8XVaIMU"></shadow>
+    </value>
+    <value name="BOTTOMTYPE">
+      <shadow type="type_null" id="$iq0=QL6WLq$xR4*1Sh@"></shadow>
+    </value>
+    <value name="COLOUR">
+      <block type="colour_hue" id="1/)L=}(h$w9W}aQ^`Qgd">
+        <mutation colour="#9fa55b"></mutation>
+        <field name="HUE">65</field>
+      </block>
+    </value>
+  </block><block type="factory_base" id="J5d~(AyJj]CglJ,7J-07" deletable="false" movable="false" x="0" y="0">
+    <mutation connections="BOTH"></mutation>
+    <field name="NAME">move_backward</field>
+    <field name="INLINE">AUTO</field>
+    <field name="CONNECTIONS">BOTH</field>
+    <statement name="INPUTS">
+      <block type="input_dummy" id="^|8YCN(6O//bC`P.[9k$">
+        <field name="ALIGN">LEFT</field>
+        <statement name="FIELDS">
+          <block type="field_static" id="LuC+QU4|KiFg[^W_c$I)">
+            <field name="TEXT">Move backwards for</field>
+            <next>
+              <block type="field_number" id="tR?uHb*Z#54vbj6$q8Uv">
+                <field name="VALUE">0</field>
+                <field name="FIELDNAME">time</field>
+                <field name="MIN">0</field>
+                <field name="MAX">50</field>
+                <field name="PRECISION">0</field>
+                <next>
+                  <block type="field_static" id="/L]pk]*F(Tuz~YWT*$PM">
+                    <field name="TEXT">seconds</field>
+                  </block>
+                </next>
+              </block>
+            </next>
+          </block>
+        </statement>
+      </block>
+    </statement>
+    <value name="TOPTYPE">
+      <shadow type="type_null" id="IBregARl9?.LXKYUb-|D"></shadow>
+    </value>
+    <value name="BOTTOMTYPE">
+      <shadow type="type_null" id="A{3lTWK?5[z.n6cyIN|g"></shadow>
+    </value>
+    <value name="COLOUR">
+      <block type="colour_hue" id="0i4TtdF0(FyXUfq)U+L;">
+        <mutation colour="#9fa55b"></mutation>
+        <field name="HUE">65</field>
+      </block>
+    </value>
+  </block><block type="factory_base" id="oyaIKMAWte-LfU{-odc)" deletable="false" movable="false" x="0" y="0">
+    <mutation connections="BOTH"></mutation>
+    <field name="NAME">say</field>
+    <field name="INLINE">AUTO</field>
+    <field name="CONNECTIONS">BOTH</field>
+    <statement name="INPUTS">
+      <block type="input_dummy" id="9,j/lS+@B3ROzfNb6x/:">
+        <field name="ALIGN">LEFT</field>
+        <statement name="FIELDS">
+          <block type="field_static" id="u4-5#qHWYX$CT*qlh!Ec">
+            <field name="TEXT">NAO will say</field>
+            <next>
+              <block type="field_input" id="91dq^8#Kgdk(afp%|T-U">
+                <field name="TEXT">Enter NAO's words here</field>
+                <field name="FIELDNAME">output string</field>
+              </block>
+            </next>
+          </block>
+        </statement>
+      </block>
+    </statement>
+    <value name="TOPTYPE">
+      <shadow type="type_null" id="Z%nmwzo%U^-k#`YKnPff"></shadow>
+    </value>
+    <value name="BOTTOMTYPE">
+      <shadow type="type_null" id="Nn[P^wC*2lk39hOFI+j_"></shadow>
+    </value>
+    <value name="COLOUR">
+      <block type="colour_hue" id="$-X$rFl/[wlW~ZnAqKK7">
+        <mutation colour="#9fa55b"></mutation>
+        <field name="HUE">65</field>
+      </block>
+    </value>
+  </block><block type="factory_base" id="f5ACIM;(dc.S(`j*(;{/" deletable="false" movable="false" x="0" y="0">
+    <mutation connections="BOTH"></mutation>
+    <field name="NAME">move_right</field>
+    <field name="INLINE">AUTO</field>
+    <field name="CONNECTIONS">BOTH</field>
+    <statement name="INPUTS">
+      <block type="input_dummy" id="^|8YCN(6O//bC`P.[9k$">
+        <field name="ALIGN">LEFT</field>
+        <statement name="FIELDS">
+          <block type="field_static" id="LuC+QU4|KiFg[^W_c$I)">
+            <field name="TEXT">Turn right for</field>
+            <next>
+              <block type="field_number" id="tR?uHb*Z#54vbj6$q8Uv">
+                <field name="VALUE">0</field>
+                <field name="FIELDNAME">time</field>
+                <field name="MIN">0</field>
+                <field name="MAX">50</field>
+                <field name="PRECISION">0</field>
+                <next>
+                  <block type="field_static" id="/L]pk]*F(Tuz~YWT*$PM">
+                    <field name="TEXT">seconds</field>
+                  </block>
+                </next>
+              </block>
+            </next>
+          </block>
+        </statement>
+      </block>
+    </statement>
+    <value name="TOPTYPE">
+      <shadow type="type_null" id="h@|7gJ.9$xY?gQ[02Lkq"></shadow>
+    </value>
+    <value name="BOTTOMTYPE">
+      <shadow type="type_null" id="G5=~ka3T_FmQo)k2@qDT"></shadow>
+    </value>
+    <value name="COLOUR">
+      <block type="colour_hue" id="~ti9Ci-%UXr/b0@LT1j|">
+        <mutation colour="#9fa55b"></mutation>
+        <field name="HUE">65</field>
+      </block>
+    </value>
+  </block><block type="factory_base" id="`rpG=Y|4A!1uMBl[5Q,|" deletable="false" movable="false" x="0" y="0">
+    <mutation connections="BOTH"></mutation>
+    <field name="NAME">move_left</field>
+    <field name="INLINE">AUTO</field>
+    <field name="CONNECTIONS">BOTH</field>
+    <statement name="INPUTS">
+      <block type="input_dummy" id="^|8YCN(6O//bC`P.[9k$">
+        <field name="ALIGN">LEFT</field>
+        <statement name="FIELDS">
+          <block type="field_static" id="LuC+QU4|KiFg[^W_c$I)">
+            <field name="TEXT">Turn left for</field>
+            <next>
+              <block type="field_number" id="tR?uHb*Z#54vbj6$q8Uv">
+                <field name="VALUE">0</field>
+                <field name="FIELDNAME">time</field>
+                <field name="MIN">0</field>
+                <field name="MAX">50</field>
+                <field name="PRECISION">0</field>
+                <next>
+                  <block type="field_static" id="/L]pk]*F(Tuz~YWT*$PM">
+                    <field name="TEXT">seconds</field>
+                  </block>
+                </next>
+              </block>
+            </next>
+          </block>
+        </statement>
+      </block>
+    </statement>
+    <value name="TOPTYPE">
+      <shadow type="type_null" id="CtT,/FioMCd8D:F3.`8Q"></shadow>
+    </value>
+    <value name="BOTTOMTYPE">
+      <shadow type="type_null" id="aYtXg``:itCFl,R=G@=."></shadow>
+    </value>
+    <value name="COLOUR">
+      <block type="colour_hue" id="h*vI;E^J9o]FaZHt%)9S">
+        <mutation colour="#9fa55b"></mutation>
+        <field name="HUE">65</field>
+      </block>
+    </value>
+  </block><block type="factory_base" id="I9`}1q.UV~|iiUBBb=~H" deletable="false" movable="false" x="0" y="0">
+    <mutation connections="BOTH"></mutation>
+    <field name="NAME">raise_right_arm</field>
+    <field name="INLINE">AUTO</field>
+    <field name="CONNECTIONS">BOTH</field>
+    <statement name="INPUTS">
+      <block type="input_dummy" id="|sL8/QuX2p7G`Xgvoib%">
+        <field name="ALIGN">LEFT</field>
+        <statement name="FIELDS">
+          <block type="field_static" id="D7%ae+jN[?pAY!L=c(3Z">
+            <field name="TEXT">Move right arm to position</field>
+            <next>
+              <block type="field_dropdown" id="%nMY5)REs;r~gjy(-{/`">
+                <mutation options="4"></mutation>
+                <field name="FIELDNAME">right arm position</field>
+                <field name="USER0">1</field>
+                <field name="CPU0">position1</field>
+                <field name="USER1">2</field>
+                <field name="CPU1">position2</field>
+                <field name="USER2">3</field>
+                <field name="CPU2">position3</field>
+                <field name="USER3">4</field>
+                <field name="CPU3">position4</field>
+              </block>
+            </next>
+          </block>
+        </statement>
+      </block>
+    </statement>
+    <value name="TOPTYPE">
+      <shadow type="type_null" id="OJENx(g;,|aJP+N(ODdB"></shadow>
+    </value>
+    <value name="BOTTOMTYPE">
+      <shadow type="type_null" id="AW,n7,Oe11c4S17e=#:V"></shadow>
+    </value>
+    <value name="COLOUR">
+      <block type="colour_hue" id="LCd1y#CO4^q61h|i]|Ka">
+        <mutation colour="#9fa55b"></mutation>
+        <field name="HUE">65</field>
+      </block>
+    </value>
+  </block><block type="factory_base" id="hv{xpgi-R.33MYm^!mQ:" deletable="false" movable="false" x="0" y="0">
+    <mutation connections="BOTH"></mutation>
+    <field name="NAME">raise_left_arm</field>
+    <field name="INLINE">AUTO</field>
+    <field name="CONNECTIONS">BOTH</field>
+    <statement name="INPUTS">
+      <block type="input_dummy" id="|sL8/QuX2p7G`Xgvoib%">
+        <field name="ALIGN">LEFT</field>
+        <statement name="FIELDS">
+          <block type="field_static" id="D7%ae+jN[?pAY!L=c(3Z">
+            <field name="TEXT">Move right arm to position</field>
+            <next>
+              <block type="field_dropdown" id="%nMY5)REs;r~gjy(-{/`">
+                <mutation options="4"></mutation>
+                <field name="FIELDNAME">right arm position</field>
+                <field name="USER0">1</field>
+                <field name="CPU0">position1</field>
+                <field name="USER1">2</field>
+                <field name="CPU1">position2</field>
+                <field name="USER2">3</field>
+                <field name="CPU2">position3</field>
+                <field name="USER3">4</field>
+                <field name="CPU3">position4</field>
+              </block>
+            </next>
+          </block>
+        </statement>
+      </block>
+    </statement>
+    <value name="TOPTYPE">
+      <shadow type="type_null" id="h@Uj{dYHIAyo(]JCXO$|"></shadow>
+    </value>
+    <value name="BOTTOMTYPE">
+      <shadow type="type_null" id="[F92U#Tz.bK|Zr63.}Qm"></shadow>
+    </value>
+    <value name="COLOUR">
+      <block type="colour_hue" id="9t3fg4yT_-6n-tCBArCE">
+        <mutation colour="#9fa55b"></mutation>
+        <field name="HUE">65</field>
+      </block>
+    </value>
+  </block><block type="factory_base" id="9U#}y;yDcO6fRTZ57dv." deletable="false" movable="false" x="0" y="0">
+    <mutation connections="BOTH"></mutation>
+    <field name="NAME">kick</field>
+    <field name="INLINE">AUTO</field>
+    <field name="CONNECTIONS">BOTH</field>
+    <statement name="INPUTS">
+      <block type="input_dummy" id="szFu=N53vZDAZX3VT6pv">
+        <field name="ALIGN">LEFT</field>
+        <statement name="FIELDS">
+          <block type="field_static" id="SmB}Jq/r,0prtxzRy?Tb">
+            <field name="TEXT">Kick with the</field>
+            <next>
+              <block type="field_dropdown" id="bZu$b-rIk9FFWu8r,k~H">
+                <mutation options="2"></mutation>
+                <field name="FIELDNAME">kick leg</field>
+                <field name="USER0">left</field>
+                <field name="CPU0">L</field>
+                <field name="USER1">right</field>
+                <field name="CPU1">R</field>
+                <next>
+                  <block type="field_static" id="|I1U,YtZAu8vqxOfU[Bd">
+                    <field name="TEXT">leg</field>
+                  </block>
+                </next>
+              </block>
+            </next>
+          </block>
+        </statement>
+      </block>
+    </statement>
+    <value name="TOPTYPE">
+      <shadow type="type_null" id="s{Sd[-y!CdF*gX;X^_47"></shadow>
+    </value>
+    <value name="BOTTOMTYPE">
+      <shadow type="type_null" id="%22VF}vI_z_G,Hs*KU{z"></shadow>
+    </value>
+    <value name="COLOUR">
+      <block type="colour_hue" id="Wmx|%*?1}BR]ED-/:MUU">
+        <mutation colour="#9fa55b"></mutation>
+        <field name="HUE">65</field>
+      </block>
+    </value>
+  </block><block type="factory_base" id="4F(XbLL-nyLjo`~hsLGz" deletable="false" movable="false" x="0" y="0">
+    <mutation connections="BOTH"></mutation>
+    <field name="NAME">extend_arm</field>
+    <field name="INLINE">AUTO</field>
+    <field name="CONNECTIONS">BOTH</field>
+    <statement name="INPUTS">
+      <block type="input_dummy" id="szFu=N53vZDAZX3VT6pv">
+        <field name="ALIGN">LEFT</field>
+        <statement name="FIELDS">
+          <block type="field_static" id="SmB}Jq/r,0prtxzRy?Tb">
+            <field name="TEXT">Raise NAO's</field>
+            <next>
+              <block type="field_dropdown" id="bZu$b-rIk9FFWu8r,k~H">
+                <mutation options="2"></mutation>
+                <field name="FIELDNAME">raise arm</field>
+                <field name="USER0">left</field>
+                <field name="CPU0">L</field>
+                <field name="USER1">right</field>
+                <field name="CPU1">R</field>
+                <next>
+                  <block type="field_static" id="|I1U,YtZAu8vqxOfU[Bd">
+                    <field name="TEXT">arm</field>
+                  </block>
+                </next>
+              </block>
+            </next>
+          </block>
+        </statement>
+      </block>
+    </statement>
+    <value name="TOPTYPE">
+      <shadow type="type_null" id="d*0PoM)EdI/~27}y%1m["></shadow>
+    </value>
+    <value name="BOTTOMTYPE">
+      <shadow type="type_null" id="lHGsP6z2,~D#OJaV[(;B"></shadow>
+    </value>
+    <value name="COLOUR">
+      <block type="colour_hue" id="%crM[,!LSX8fQoC9}#_A">
+        <mutation colour="#9fa55b"></mutation>
+        <field name="HUE">65</field>
+      </block>
+    </value>
+  </block><block type="factory_base" id="GJ}[eVw6.0TDr0tZi6sY" deletable="false" movable="false" x="0" y="0">
+    <mutation connections="BOTH"></mutation>
+    <field name="NAME">take_picture</field>
+    <field name="INLINE">AUTO</field>
+    <field name="CONNECTIONS">BOTH</field>
+    <statement name="INPUTS">
+      <block type="input_dummy" id="9,j/lS+@B3ROzfNb6x/:">
+        <field name="ALIGN">LEFT</field>
+        <statement name="FIELDS">
+          <block type="field_static" id="u4-5#qHWYX$CT*qlh!Ec">
+            <field name="TEXT">Take a picture and call it</field>
+            <next>
+              <block type="field_input" id="91dq^8#Kgdk(afp%|T-U">
+                <field name="TEXT">Picture file name</field>
+                <field name="FIELDNAME">filename</field>
+              </block>
+            </next>
+          </block>
+        </statement>
+      </block>
+    </statement>
+    <value name="TOPTYPE">
+      <shadow type="type_null" id="xI5pK,;y*$39nuG(Jygq"></shadow>
+    </value>
+    <value name="BOTTOMTYPE">
+      <shadow type="type_null" id="27mwiyb!QaXRssUR$e~r"></shadow>
+    </value>
+    <value name="COLOUR">
+      <block type="colour_hue" id="hDAG~7kZ-m6K;6O`VnUG">
+        <mutation colour="#745ba5"></mutation>
+        <field name="HUE">260</field>
+      </block>
+    </value>
+  </block><block type="factory_base" id="b.6es$l6~ixlf6+}ti:c" deletable="false" movable="false" x="0" y="0">
+    <mutation connections="BOTH"></mutation>
+    <field name="NAME">play_audio</field>
+    <field name="INLINE">AUTO</field>
+    <field name="CONNECTIONS">BOTH</field>
+    <statement name="INPUTS">
+      <block type="input_dummy" id="9,j/lS+@B3ROzfNb6x/:">
+        <field name="ALIGN">LEFT</field>
+        <statement name="FIELDS">
+          <block type="field_static" id="u4-5#qHWYX$CT*qlh!Ec">
+            <field name="TEXT">Play audio from</field>
+            <next>
+              <block type="field_input" id="91dq^8#Kgdk(afp%|T-U">
+                <field name="TEXT">enter audio filepath here</field>
+                <field name="FIELDNAME">audio filepath</field>
+              </block>
+            </next>
+          </block>
+        </statement>
+      </block>
+    </statement>
+    <value name="TOPTYPE">
+      <shadow type="type_null" id="8X]nq3;E8U08E$^w{E:Y"></shadow>
+    </value>
+    <value name="BOTTOMTYPE">
+      <shadow type="type_null" id="AOI-xH+9J.o(MOZS1hWm"></shadow>
+    </value>
+    <value name="COLOUR">
+      <block type="colour_hue" id="f%xs!W%n}c|K@$Z2~0of">
+        <mutation colour="#745ba5"></mutation>
+        <field name="HUE">260</field>
+      </block>
+    </value>
+  </block><block type="factory_base" id="]VJk_jtT5,BB[Fy|1O5i" deletable="false" movable="false" x="0" y="0">
+    <mutation connections="BOTH"></mutation>
+    <field name="NAME">sit</field>
+    <field name="INLINE">AUTO</field>
+    <field name="CONNECTIONS">BOTH</field>
+    <statement name="INPUTS">
+      <block type="input_dummy" id="c_u|S0Im{6%R_3o]?*EC">
+        <field name="ALIGN">LEFT</field>
+        <statement name="FIELDS">
+          <block type="field_static" id="Z@Xr;+#695HI`2RA%:2N">
+            <field name="TEXT">Make NAO sit down</field>
+          </block>
+        </statement>
+      </block>
+    </statement>
+    <value name="TOPTYPE">
+      <shadow type="type_null" id="P%)(pH8;~L3Sq{[IWuwo"></shadow>
+    </value>
+    <value name="BOTTOMTYPE">
+      <shadow type="type_null" id="1?Uu=:kz}%HY`vpU17uy"></shadow>
+    </value>
+    <value name="COLOUR">
+      <block type="colour_hue" id="UsE1MHGq7r$RGg4IQiw*">
+        <mutation colour="#5ba55b"></mutation>
+        <field name="HUE">120</field>
+      </block>
+    </value>
+  </block><block type="factory_base" id="uMYq?nO;=AaUWQv!oCpC" deletable="false" movable="false" x="0" y="0">
+    <mutation connections="BOTH"></mutation>
+    <field name="NAME">stand</field>
+    <field name="INLINE">AUTO</field>
+    <field name="CONNECTIONS">BOTH</field>
+    <statement name="INPUTS">
+      <block type="input_dummy" id="c_u|S0Im{6%R_3o]?*EC">
+        <field name="ALIGN">LEFT</field>
+        <statement name="FIELDS">
+          <block type="field_static" id="Z@Xr;+#695HI`2RA%:2N">
+            <field name="TEXT">Make NAO stand up</field>
+          </block>
+        </statement>
+      </block>
+    </statement>
+    <value name="TOPTYPE">
+      <shadow type="type_null" id="=I:K8%VM_b@{?y/acmB4"></shadow>
+    </value>
+    <value name="BOTTOMTYPE">
+      <shadow type="type_null" id="a~=uoH8$Y}`hb5}UF6[T"></shadow>
+    </value>
+    <value name="COLOUR">
+      <block type="colour_hue" id=")ti}KOwNFu7c-;/o.}kU">
+        <mutation colour="#5ba55b"></mutation>
+        <field name="HUE">120</field>
+      </block>
+    </value>
+  </block><block type="factory_base" id="u.fnb/,!CPwg-Q5tp3Ki" deletable="false" movable="false" x="0" y="0">
+    <mutation connections="BOTH"></mutation>
+    <field name="NAME">lay_down</field>
+    <field name="INLINE">AUTO</field>
+    <field name="CONNECTIONS">BOTH</field>
+    <statement name="INPUTS">
+      <block type="input_dummy" id="c_u|S0Im{6%R_3o]?*EC">
+        <field name="ALIGN">LEFT</field>
+        <statement name="FIELDS">
+          <block type="field_static" id="Z@Xr;+#695HI`2RA%:2N">
+            <field name="TEXT">Make NAO lay down</field>
+          </block>
+        </statement>
+      </block>
+    </statement>
+    <value name="TOPTYPE">
+      <shadow type="type_null" id="n`-miVLEKwSbW~F`aMQ_"></shadow>
+    </value>
+    <value name="BOTTOMTYPE">
+      <shadow type="type_null" id="Ij!C_=-F+S$}U4WHuzp%"></shadow>
+    </value>
+    <value name="COLOUR">
+      <block type="colour_hue" id="Mbz;R@TI%e@?yTpL)j]M">
+        <mutation colour="#5ba55b"></mutation>
+        <field name="HUE">120</field>
+      </block>
+    </value>
+  </block></xml>
