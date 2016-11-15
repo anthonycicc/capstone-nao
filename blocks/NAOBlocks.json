@@ -1,0 +1,295 @@
+[{
+  "type": "connect_to_robot",
+  "message0": "Enter NAO's IP Address %1",
+  "args0": [
+    {
+      "type": "field_input",
+      "name": "Robot IP Adress",
+      "text": "0.0.0.0"
+    }
+  ],
+  "nextStatement": null,
+  "colour": 20,
+  "tooltip": "",
+  "helpUrl": "http://www.example.com/"
+},
+{
+  "type": "disconnect_from_robot",
+  "message0": "Disconnect from NAO",
+  "previousStatement": null,
+  "colour": 20,
+  "tooltip": "",
+  "helpUrl": "http://www.example.com/"
+},
+{
+  "type": "reset_to_neutral",
+  "message0": "Reset NAO to a standing position",
+  "previousStatement": null,
+  "nextStatement": null,
+  "colour": 120,
+  "tooltip": "",
+  "helpUrl": "http://www.example.com/"
+},
+{
+  "type": "move_forward",
+  "message0": "Move forward for %1 seconds",
+  "args0": [
+    {
+      "type": "field_number",
+      "name": "time",
+      "value": 0,
+      "min": 0,
+      "max": 50
+    }
+  ],
+  "previousStatement": null,
+  "nextStatement": null,
+  "colour": 65,
+  "tooltip": "",
+  "helpUrl": "http://www.example.com/"
+},
+{
+  "type": "move_backward",
+  "message0": "Move backwards for %1 seconds",
+  "args0": [
+    {
+      "type": "field_number",
+      "name": "time",
+      "value": 0,
+      "min": 0,
+      "max": 50
+    }
+  ],
+  "previousStatement": null,
+  "nextStatement": null,
+  "colour": 65,
+  "tooltip": "",
+  "helpUrl": "http://www.example.com/"
+},
+{
+  "type": "say",
+  "message0": "NAO will say %1",
+  "args0": [
+    {
+      "type": "field_input",
+      "name": "output string",
+      "text": "Enter NAO's words here"
+    }
+  ],
+  "previousStatement": null,
+  "nextStatement": null,
+  "colour": 65,
+  "tooltip": "",
+  "helpUrl": "http://www.example.com/"
+},
+{
+  "type": "move_right",
+  "message0": "Turn right for %1 seconds",
+  "args0": [
+    {
+      "type": "field_number",
+      "name": "time",
+      "value": 0,
+      "min": 0,
+      "max": 50
+    }
+  ],
+  "previousStatement": null,
+  "nextStatement": null,
+  "colour": 65,
+  "tooltip": "",
+  "helpUrl": "http://www.example.com/"
+},
+{
+  "type": "move_left",
+  "message0": "Turn left for %1 seconds",
+  "args0": [
+    {
+      "type": "field_number",
+      "name": "time",
+      "value": 0,
+      "min": 0,
+      "max": 50
+    }
+  ],
+  "previousStatement": null,
+  "nextStatement": null,
+  "colour": 65,
+  "tooltip": "",
+  "helpUrl": "http://www.example.com/"
+},
+{
+  "type": "raise_right_arm",
+  "message0": "Move right arm to position %1",
+  "args0": [
+    {
+      "type": "field_dropdown",
+      "name": "right arm position",
+      "options": [
+        [
+          "1",
+          "position1"
+        ],
+        [
+          "2",
+          "position2"
+        ],
+        [
+          "3",
+          "position3"
+        ],
+        [
+          "4",
+          "position4"
+        ]
+      ]
+    }
+  ],
+  "previousStatement": null,
+  "nextStatement": null,
+  "colour": 65,
+  "tooltip": "",
+  "helpUrl": "http://www.example.com/"
+},
+{
+  "type": "raise_left_arm",
+  "message0": "Move right arm to position %1",
+  "args0": [
+    {
+      "type": "field_dropdown",
+      "name": "right arm position",
+      "options": [
+        [
+          "1",
+          "position1"
+        ],
+        [
+          "2",
+          "position2"
+        ],
+        [
+          "3",
+          "position3"
+        ],
+        [
+          "4",
+          "position4"
+        ]
+      ]
+    }
+  ],
+  "previousStatement": null,
+  "nextStatement": null,
+  "colour": 65,
+  "tooltip": "",
+  "helpUrl": "http://www.example.com/"
+},
+{
+  "type": "kick",
+  "message0": "Kick with the %1 leg",
+  "args0": [
+    {
+      "type": "field_dropdown",
+      "name": "kick leg",
+      "options": [
+        [
+          "left",
+          "L"
+        ],
+        [
+          "right",
+          "R"
+        ]
+      ]
+    }
+  ],
+  "previousStatement": null,
+  "nextStatement": null,
+  "colour": 65,
+  "tooltip": "",
+  "helpUrl": "http://www.example.com/"
+},
+{
+  "type": "extend_arm",
+  "message0": "Raise NAO's %1 arm",
+  "args0": [
+    {
+      "type": "field_dropdown",
+      "name": "raise arm",
+      "options": [
+        [
+          "left",
+          "L"
+        ],
+        [
+          "right",
+          "R"
+        ]
+      ]
+    }
+  ],
+  "previousStatement": null,
+  "nextStatement": null,
+  "colour": 65,
+  "tooltip": "",
+  "helpUrl": "http://www.example.com/"
+},
+{
+  "type": "take_picture",
+  "message0": "Take a picture and call it %1",
+  "args0": [
+    {
+      "type": "field_input",
+      "name": "filename",
+      "text": "Picture file name"
+    }
+  ],
+  "previousStatement": null,
+  "nextStatement": null,
+  "colour": 260,
+  "tooltip": "",
+  "helpUrl": "http://www.example.com/"
+},
+{
+  "type": "play_audio",
+  "message0": "Play audio from %1",
+  "args0": [
+    {
+      "type": "field_input",
+      "name": "audio filepath",
+      "text": "enter audio filepath here"
+    }
+  ],
+  "previousStatement": null,
+  "nextStatement": null,
+  "colour": 260,
+  "tooltip": "",
+  "helpUrl": "http://www.example.com/"
+},
+{
+  "type": "sit",
+  "message0": "Make NAO sit down",
+  "previousStatement": null,
+  "nextStatement": null,
+  "colour": 120,
+  "tooltip": "",
+  "helpUrl": "http://www.example.com/"
+},
+{
+  "type": "stand",
+  "message0": "Make NAO stand up",
+  "previousStatement": null,
+  "nextStatement": null,
+  "colour": 120,
+  "tooltip": "",
+  "helpUrl": "http://www.example.com/"
+},
+{
+  "type": "lay_down",
+  "message0": "Make NAO lay down",
+  "previousStatement": null,
+  "nextStatement": null,
+  "colour": 120,
+  "tooltip": "",
+  "helpUrl": "http://www.example.com/"
+}]
