@@ -1,0 +1,113 @@
+Blockly.Python['connect_to_robot'] = function(block) {
+  var text_robot_ip_adress = block.getFieldValue('Robot IP Adress');
+  // TODO: Assemble Python into code variable.
+  var code = '...\n';
+  return code;
+};
+
+Blockly.Python['disconnect_from_robot'] = function(block) {
+  // TODO: Assemble Python into code variable.
+  var code = '...\n';
+  return code;
+};
+
+Blockly.Python['reset_to_neutral'] = function(block) {
+  // TODO: Assemble Python into code variable.
+  var code = '...\n';
+  return code;
+};
+
+Blockly.Python['move_forward'] = function(block) {
+  var number_time = block.getFieldValue('time');
+  // TODO: Assemble Python into code variable.
+  var code = '...\n';
+  return code;
+};
+
+Blockly.Python['move_backward'] = function(block) {
+  var number_time = block.getFieldValue('time');
+  // TODO: Assemble Python into code variable.
+  var code = '...\n';
+  return code;
+};
+
+Blockly.Python['say'] = function(block) {
+  var text_output_string = block.getFieldValue('output string');
+  // TODO: Assemble Python into code variable.
+  var code = '...\n';
+  return code;
+};
+
+Blockly.Python['move_right'] = function(block) {
+  var number_time = block.getFieldValue('time');
+  // TODO: Assemble Python into code variable.
+  var code = '...\n';
+  return code;
+};
+
+Blockly.Python['move_left'] = function(block) {
+  var number_time = block.getFieldValue('time');
+  // TODO: Assemble Python into code variable.
+  var code = '...\n';
+  return code;
+};
+
+Blockly.Python['raise_right_arm'] = function(block) {
+  var dropdown_right_arm_position = block.getFieldValue('right arm position');
+  // TODO: Assemble Python into code variable.
+  var code = '...\n';
+  return code;
+};
+
+Blockly.Python['raise_left_arm'] = function(block) {
+  var dropdown_right_arm_position = block.getFieldValue('right arm position');
+  // TODO: Assemble Python into code variable.
+  var code = '...\n';
+  return code;
+};
+
+Blockly.Python['kick'] = function(block) {
+  var dropdown_kick_leg = block.getFieldValue('kick leg');
+  // TODO: Assemble Python into code variable.
+  var code = '...\n';
+  return code;
+};
+
+Blockly.Python['extend_arm'] = function(block) {
+  var dropdown_raise_arm = block.getFieldValue('raise arm');
+  // TODO: Assemble Python into code variable.
+  var code = '...\n';
+  return code;
+};
+
+Blockly.Python['take_picture'] = function(block) {
+  var text_filename = block.getFieldValue('filename');
+  // TODO: Assemble Python into code variable.
+  var code = '...\n';
+  return code;
+};
+
+Blockly.Python['play_audio'] = function(block) {
+  var text_audio_filepath = block.getFieldValue('audio filepath');
+  // TODO: Assemble Python into code variable.
+  var code = '...\n';
+  return code;
+};
+
+Blockly.Python['sit'] = function(block) {
+  // TODO: Assemble Python into code variable.
+  var code = '...\n';
+  return code;
+};
+
+Blockly.Python['stand'] = function(block) {
+  // TODO: Assemble Python into code variable.
+  var code = '...\n';
+  return code;
+};
+
+Blockly.Python['lay_down'] = function(block) {
+  // TODO: Assemble Python into code variable.
+  var code = '...\n';
+  return code;
+};
