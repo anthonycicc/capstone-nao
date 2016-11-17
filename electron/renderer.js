@@ -16,6 +16,8 @@ document.addEventListener("DOMContentLoaded", () => {
     toolbox: makeToolBox(blocks)
   });
 
+  workspace.addChangeListener(myUpdateFunction);
+
   document.getElementById("save-button")
     .addEventListener("click", saveFile);
   document.getElementById("load-button")
@@ -31,6 +33,12 @@ function addBlock(block) {
     }
   };
 }
+
+function myUpdateFunction(event) {
+  var code = Blockly.Python.workspaceToCode(workspace);
+  document.getElementById('textarea').value = code;
+}
+
 
 const makeToolBox = blockList => {
   const start =

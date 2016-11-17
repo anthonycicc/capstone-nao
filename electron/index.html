@@ -6,6 +6,7 @@
   <title>Hello World!</title>
   <script src="node_modules/blockly/blockly_compressed.js"></script>
   <script src="node_modules/blockly/python_compressed.js"></script>
+  <script src="../blocks/NAOGeneratorStubs.js"></script>
   <script src="node_modules/blockly/blocks_compressed.js"></script>
   <script src="node_modules/blockly/msg/js/en.js"></script>
 </head>
@@ -20,10 +21,15 @@
     <block type="text"></block>
     <block type="text_print"></block>
   </xml>
+  <div>
   <div id="blocklyDiv" style="height: 680px; width: 1200px;"></div>
   <button id="save-button" type="button">Save File</button>
   <button id="load-button" type="button">Load File</button>
   <button id="run-button" type="button">Execute Your Code</button>
+  </div>
+  <div>
+    <textarea id="textarea" rows="80" cols="80" readonly="readonly"></textarea>
+  </div>
 </body>
 <script>
   // You can also require other files to run in this process
