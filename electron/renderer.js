@@ -4,7 +4,8 @@
 
 fs = require('fs');
 const child_process = require('child_process');
-const {dialog} = require('electron').remote;
+const { dialog } = require('electron').remote;
+const blocks = require('../blocks/NAOBlocks');
 
 var workspace;
 // start up blockly
