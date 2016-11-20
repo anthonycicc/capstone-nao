@@ -83,5 +83,19 @@ function executeCode() {
 
   fs.writeFileSync("tmp.py", code);
 
-  run_code = child_process.spawn('python' ['tmp.py']);
+  var extraOptions = {cwd:"../lib", shell:true};
+  const spawn = require('child_process').spawn;
+  const pyRunner = spawn('python', ['../electron/tmp.py'], extraOptions);
+
+  pyRunner.stdout.on('data', (data) => {
+    console.log(`stdout: ${data}`);
+  });
+
+  pyRunner.stderr.on('data', (data) => {
+    console.log(`stderr: ${data}`);
+  });
+
+  pyRunner.on('close', (code) => {
+    console.log(`child process exited with code ${code}`);
+  });
 }

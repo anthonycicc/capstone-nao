@@ -1,8 +1,8 @@
 Blockly.Python['connect_to_robot'] = function(block) {
-  var text_robot_ip_address = block.getFieldValue('Robot IP Adress');
+  var text_robot_ip_address = block.getFieldValue('Robot IP Address');
   // TODO: Assemble Python into code variable.
   var code = 
-	'robot = Beginner_Functions(' + text_robot_ip_address + ')\n';
+	'import sys\nsys.path.append(\'.\')\nimport beginner as beg\n\nrobot = beg.Beginner_Functions(\"' + text_robot_ip_address + '\")\n';
   return code;
 };
 
