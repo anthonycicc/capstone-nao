@@ -84,7 +84,7 @@
 },
 {
   "type": "move_right",
-  "message0": "Turn right for %1 seconds",
+  "message0": "Move to the right for %1 seconds",
   "args0": [
     {
       "type": "field_number",
@@ -102,7 +102,7 @@
 },
 {
   "type": "move_left",
-  "message0": "Turn left for %1 seconds",
+  "message0": "Move to the left for %1 seconds",
   "args0": [
     {
       "type": "field_number",
@@ -128,19 +128,19 @@
       "options": [
         [
           "1",
-          "position1"
+          "1"
         ],
         [
           "2",
-          "position2"
+          "2"
         ],
         [
           "3",
-          "position3"
+          "3"
         ],
         [
           "4",
-          "position4"
+          "4"
         ]
       ]
     }
@@ -153,52 +153,27 @@
 },
 {
   "type": "raise_left_arm",
-  "message0": "Move right arm to position %1",
+  "message0": "Move left arm to position %1",
   "args0": [
     {
       "type": "field_dropdown",
-      "name": "right arm position",
+      "name": "left arm position",
       "options": [
         [
           "1",
-          "position1"
+          "1"
         ],
         [
           "2",
-          "position2"
+          "2"
         ],
         [
           "3",
-          "position3"
+          "3"
         ],
         [
           "4",
-          "position4"
-        ]
-      ]
-    }
-  ],
-  "previousStatement": null,
-  "nextStatement": null,
-  "colour": 65,
-  "tooltip": "",
-  "helpUrl": "http://www.example.com/"
-},
-{
-  "type": "kick",
-  "message0": "Kick with the %1 leg",
-  "args0": [
-    {
-      "type": "field_dropdown",
-      "name": "kick leg",
-      "options": [
-        [
-          "left",
-          "L"
-        ],
-        [
-          "right",
-          "R"
+          "4"
         ]
       ]
     }
@@ -231,38 +206,6 @@
   "previousStatement": null,
   "nextStatement": null,
   "colour": 65,
-  "tooltip": "",
-  "helpUrl": "http://www.example.com/"
-},
-{
-  "type": "take_picture",
-  "message0": "Take a picture and call it %1",
-  "args0": [
-    {
-      "type": "field_input",
-      "name": "filename",
-      "text": "Picture file name"
-    }
-  ],
-  "previousStatement": null,
-  "nextStatement": null,
-  "colour": 260,
-  "tooltip": "",
-  "helpUrl": "http://www.example.com/"
-},
-{
-  "type": "play_audio",
-  "message0": "Play audio from %1",
-  "args0": [
-    {
-      "type": "field_input",
-      "name": "audio filepath",
-      "text": "enter audio filepath here"
-    }
-  ],
-  "previousStatement": null,
-  "nextStatement": null,
-  "colour": 260,
   "tooltip": "",
   "helpUrl": "http://www.example.com/"
 },

@@ -2,6 +2,8 @@ import lib.beginner as beg
 
 robot = beg.Beginner_Functions("localhost", 9559)
 
+robot.say("Fuck you motherfucka")
+
 robot.sit()
 robot.reset_to_neutral()
 

@@ -35,7 +35,7 @@ Blockly.Python['move_backward'] = function(block) {
 Blockly.Python['say'] = function(block) {
   var text_output_string = block.getFieldValue('output string');
   // TODO: Assemble Python into code variable.
-  var code = 'robot.say(' + text_output_string + ')\n';
+  var code = 'robot.say(\"' + text_output_string + '\")\n';
   return code;
 };
 
@@ -67,31 +67,10 @@ Blockly.Python['raise_left_arm'] = function(block) {
   return code;
 };
 
-Blockly.Python['kick'] = function(block) {
-  var dropdown_kick_leg = block.getFieldValue('kick leg');
-  // TODO: Assemble Python into code variable.
-  var code = 'robot.kick(' + dropdown_kick_leg + ')\n';
-  return code;
-};
-
 Blockly.Python['extend_arm'] = function(block) {
   var dropdown_raise_arm = block.getFieldValue('raise arm');
   // TODO: Assemble Python into code variable.
-  var code = 'robot.extend_arm(' + dropdown_raise_arm + ')\n';
-  return code;
-};
-
-Blockly.Python['take_picture'] = function(block) {
-  var text_filename = block.getFieldValue('filename');
-  // TODO: Assemble Python into code variable.
-  var code = 'robot.take_picture(' + text_filename + ')\n';
-  return code;
-};
-
-Blockly.Python['play_audio'] = function(block) {
-  var text_audio_filepath = block.getFieldValue('audio filepath');
-  // TODO: Assemble Python into code variable.
-  var code = 'robot.play_audio(' + text_audio_filepath + ')\n';
+  var code = 'robot.extend_arm(\"' + dropdown_raise_arm + '\")\n';
   return code;
 };
 

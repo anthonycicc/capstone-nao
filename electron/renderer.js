@@ -94,6 +94,7 @@ function executeCode() {
 
   pyRunner.stderr.on('data', (data) => {
     console.log(`stderr: ${data}`);
+    window.alert("Something went wrong! Make sure your environment is correctly configured, and try to run your code again!")
   });
 
   pyRunner.on('close', (code) => {
