@@ -147,8 +147,8 @@ class Beginner_Functions(ll.Low_Level):
         :return: 0 if action completed successfully, something else on failure
         """
 
-        #TODO: Add censorship functions
-        self.__speechProxy.say(inputString)
+        censoredString = self.censor_text(inputString)
+        self.__speechProxy.say(censoredString)
 
     @connection_intact
     def move_right(self, seconds):

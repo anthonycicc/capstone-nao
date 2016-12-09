@@ -1,6 +1,7 @@
 # Stubs for "lower level" functionality
 from naoqi import ALProxy
 import almath
+import os
 
 class Low_Level():
     ACTION_TIME = 0.6
@@ -16,7 +17,6 @@ class Low_Level():
         self.motionProxy = motionProxy
         self.postureProxy = postureProxy
         self.tts = tts
-   
 
     def step_right_leg(self):
         """ Instructs the robot to step with its right leg
@@ -31,7 +31,6 @@ class Low_Level():
         :return: 0 if action completed successfully, something else on failure
         """
         return step_leg("left")
-       
 
     def step_leg(self, leg):
         if leg == "left":
@@ -52,8 +51,12 @@ class Low_Level():
         :param inputString: The string to censor
         :return: The censored string
         """
-        # TODO actually implement this
-        return inputString
+        os.chdir("..\\lib")
+        li = open("bad_words.txt").read().splitlines()
+        outputString = inputString
+        for i in li:
+            outputString = outputString.replace(i, "")
+        return outputString
 
     def speak(self, text):
         """ A direct text-to-speech function
@@ -74,7 +77,6 @@ class Low_Level():
         """
         joints = ["ShoulderPitch", "ShoulderRoll"]
         return move_joints(side, joints, [pitch], [roll])
-     
 
     def move_joints(self, side, joints, angleList):
         """ Moves a list of joints on a given side of the body to the given angles
@@ -119,7 +121,6 @@ class Low_Level():
         angles = [[almath.TO_RADS(deg)] for deg in [-80, -4, 0]]
     
         return move_joints(side, joints, angles)
-    
 
     def kick_right_leg(self):
         """ Instructs the robot to kick with its right leg
@@ -135,7 +136,6 @@ class Low_Level():
         :return: 0 if action completed successfully, something else on failure
         """
         return kick_leg("left")
-
 
     def speech_to_text(self, waitPeriod):
         """ A potentially useful function for transcribing speech to text

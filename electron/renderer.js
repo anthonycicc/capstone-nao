@@ -41,21 +41,22 @@ function myUpdateFunction(event) {
 
 
 const makeToolBox = blockList => {
-  const start =
-        `<xml id="toolbox" style="display: none">`;
-  const logical_stuff = `
+  const logical_xml = `
+  <category name="Control">
     <block type="controls_if"></block>
     <block type="controls_repeat_ext"></block>
     <block type="logic_compare"></block>
     <block type="math_number"></block>
     <block type="math_arithmetic"></block>
-    <block type="text"></block>
-    <block type="text_print"></block>`;
+  </category>`;
 
   const blocks_xml = blockList.map(block => `<block type="${block.type}"></block>`).join("\n");
-  console.log(blocks_xml);
-
-  return start + blocks_xml + `</xml>`;
+  return `<xml id="toolbox" style="display: none">
+   ${logical_xml}
+<category name="Robot">
+    ${blocks_xml}
+   </category>
+</xml>`;
 };
 
 // Save to file
@@ -93,6 +94,7 @@ function executeCode() {
 
   pyRunner.stderr.on('data', (data) => {
     console.log(`stderr: ${data}`);
+    window.alert("Something went wrong! Make sure your environment is correctly configured, and try to run your code again!")
   });
 
   pyRunner.on('close', (code) => {
